@@ -355,11 +355,15 @@ Notes:
   to find next to `maiaxi/iptv-player`. The local folder is still `iptv-player-tv`. Commits use
   the noreply identity of the Swift repo, configured for this repo only. The README is for people
   installing the app. Provider details and LAN IPs were removed from the docs before publishing.
-- Releases: `scripts/release.sh <x.y.z> [notes]` refuses to run with uncommitted changes or a
-  missing `keystore.properties`. It sets `versionName` and `versionCode` (x·10000 + y·100 + z),
-  runs the tests, builds and verifies the signed APK, commits "Release x.y.z", tags `vx.y.z`,
-  pushes, and runs `gh release create` with `iptv-player-googletv-x.y.z.apk`. It runs on the Mac,
-  not in CI, so the signing key never leaves it.
+- Releases (v0.1.0 and v0.1.1 were built on the Mac): from 0.1.2, they come from GitHub
+  Actions, as in the Swift repo. The user chose this, accepting that the keystore and its
+  password live in the repo's secrets. `.github/workflows/build.yml` runs the tests and builds
+  the debug APK and an unsigned release APK on every PR and push to `main`, kept as artifacts. On
+  a `v*` tag, it writes `keystore.properties` from the secrets, passes `-PappVersionName` and
+  `-PappVersionCode` (x·10000 + y·100 + z) from the tag, verifies the signature, and creates
+  the release with `--generate-notes`. `scripts/release.sh <x.y.z>` only checks that `main` is
+  clean and in sync, then pushes an annotated tag. `build.gradle.kts` no longer holds the
+  version: local builds are `0.0.0-dev`.
 - Updater: `services/Updater.kt`, an `AndroidViewModel` created in `AppRoot`. Release builds check
   `releases/latest` of the repo once at launch; debug builds never do. A newer tag shows
   "Update to x" in the browse header and under Sources, next to the version and "Check for
@@ -371,6 +375,12 @@ Notes:
   system installer updated it to 0.1.0 with the source kept.
   After v0.1.1 was published, the box went from 0.1.0 to 0.1.1 in the same way: one press on
   "Update to 0.1.1", then Install.
+- Launcher icon (0.1.2): the app only had square PNGs, so launchers that draw round icons showed
+  it square. There's now an adaptive icon (`mipmap-anydpi-v26`, vector layers
+  `ic_launcher_background` and `ic_launcher_foreground` ported from the Swift app's
+  `make-icon.swift`) and a `roundIcon`. The box's custom launcher shows banners, and the old
+  banner (dark with the icon in the middle) looked different from the others. It's now an
+  edge-to-edge gradient with rounded corners and the TV symbol, checked on the box.
 - Xiaomi TV Box S quirk: it has a second profile (user 10). The settings screen the app opens
   applied the switch to the app in that profile, so `canRequestPackageInstalls()` stayed false
   and the app sent the user back to the same screen. It was granted for user 0 with
@@ -424,3 +434,5 @@ Notes:
 - 2026-10-20 · Step 8 · Public repo `maiaxi/iptv-player-googletv`, `scripts/release.sh`, and
   release v0.1.0. In-app updater from GitHub releases, tested on the box from 0.0.9 to 0.1.0.
   Found the Xiaomi profile quirk with the install permission and added a fallback message.
+- 2026-10-20 · Step 8 · Adaptive and round launcher icon and a new banner. Releases move to
+  GitHub Actions on tags, with the version from the tag and signing from repo secrets.

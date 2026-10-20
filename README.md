@@ -37,5 +37,7 @@ You need JDK 21 and the Android SDK (platform 36).
 ./gradlew test
 ```
 
-Releases are signed with a key that isn't in this repository. `scripts/release.sh <version>`
-builds, tags and publishes one.
+Every pull request and push to `main` runs the tests and builds the APKs in GitHub Actions.
+Pushing a tag like `v1.2.3` (`scripts/release.sh 1.2.3` does it from `main`) builds the release
+APK signed with a key kept in the repository's secrets and publishes it, and installed apps
+offer the update.

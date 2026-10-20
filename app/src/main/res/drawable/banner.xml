@@ -1,16 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item>
-        <shape android:shape="rectangle">
-            <solid android:color="#FF101418" />
-            <size
-                android:width="320dp"
-                android:height="180dp" />
-        </shape>
-    </item>
-    <item
-        android:width="120dp"
-        android:height="120dp"
-        android:drawable="@mipmap/ic_launcher"
-        android:gravity="center" />
-</layer-list>
+<!--
+  The TV launcher banner: the icon's gradient edge to edge, with rounded corners like other apps'
+  banners, and the TV symbol from ic_launcher_foreground scaled up in the middle.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <path android:pathData="M12,0h296a12,12 0,0 1,12 12v156a12,12 0,0 1,-12 12h-296a12,12 0,0 1,-12 -12v-156a12,12 0,0 1,12 -12z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="65"
+                android:startY="-45.6"
+                android:endX="255"
+                android:endY="225.6">
+                <item android:color="#FF7338F2" android:offset="0" />
+                <item android:color="#FF296BFA" android:offset="0.5" />
+                <item android:color="#FF1AC7F2" android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <group
+        android:scaleX="2.2"
+        android:scaleY="2.2"
+        android:translateX="41.2"
+        android:translateY="-32.32">
+        <path
+            android:fillColor="#F2FFFFFF"
+            android:pathData="M32.88,33.2h42.24a5.28,5.28 0,0 1,5.28 5.28v26.24a5.28,5.28 0,0 1,-5.28 5.28h-42.24a5.28,5.28 0,0 1,-5.28 -5.28v-26.24a5.28,5.28 0,0 1,5.28 -5.28z" />
+        <path
+            android:fillColor="#F2FFFFFF"
+            android:pathData="M44.6,74.4h18.8a1.8,1.8 0,0 1,0 3.6h-18.8a1.8,1.8 0,0 1,0 -3.6z" />
+        <path
+            android:fillColor="#FF524DF5"
+            android:pathData="M48.44,42.77L63.89,51.6L48.44,60.43z" />
+    </group>
+</vector>

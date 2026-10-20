@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The TV and play symbol from the Swift app's icon, laid out on an 80dp body centred in the 108dp
+  adaptive canvas, so launchers can mask it to a circle or any other shape without clipping it.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Screen -->
+    <path
+        android:fillColor="#F2FFFFFF"
+        android:pathData="M32.88,33.2h42.24a5.28,5.28 0,0 1,5.28 5.28v26.24a5.28,5.28 0,0 1,-5.28 5.28h-42.24a5.28,5.28 0,0 1,-5.28 -5.28v-26.24a5.28,5.28 0,0 1,5.28 -5.28z" />
+    <!-- Stand -->
+    <path
+        android:fillColor="#F2FFFFFF"
+        android:pathData="M44.6,74.4h18.8a1.8,1.8 0,0 1,0 3.6h-18.8a1.8,1.8 0,0 1,0 -3.6z" />
+    <!-- Play -->
+    <path
+        android:fillColor="#FF524DF5"
+        android:pathData="M48.44,42.77L63.89,51.6L48.44,60.43z" />
+</vector>
