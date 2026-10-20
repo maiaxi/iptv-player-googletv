@@ -369,6 +369,8 @@ Notes:
   settings. `UpdaterTest` covers the version comparison.
 - Tested on the box: a local 0.0.9 build found v0.1.0 on GitHub, downloaded it, and the
   system installer updated it to 0.1.0 with the source kept.
+  After v0.1.1 was published, the box went from 0.1.0 to 0.1.1 in the same way: one press on
+  "Update to 0.1.1", then Install.
 - Xiaomi TV Box S quirk: it has a second profile (user 10). The settings screen the app opens
   applied the switch to the app in that profile, so `canRequestPackageInstalls()` stayed false
   and the app sent the user back to the same screen. It was granted for user 0 with
