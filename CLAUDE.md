@@ -45,10 +45,14 @@ Commit, push or create a GitHub repo only when the user asks.
 - Release builds (`./gradlew assembleRelease`) are signed with
   `~/.android/keystores/iptv-player-tv-release.jks`, through the git-ignored `keystore.properties`.
   Never commit either.
-- Publish with `scripts/release.sh <x.y.z> ["notes"]` from a clean tree. It bumps the version,
-  builds, tags and creates the GitHub release that the in-app updater reads. The repo is
-  public: https://github.com/maiaxi/iptv-player-googletv. Keep provider details, credentials
-  and LAN addresses out of it.
+- Changes go through pull requests. GitHub Actions (`.github/workflows/build.yml`) runs the tests
+  and builds the APKs on every PR and push to `main`. To release, run `scripts/release.sh <x.y.z>`
+  on an up-to-date `main`. It pushes the tag `vx.y.z`, and Actions builds the APK signed with the
+  keystore from the repo secrets (`KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, `KEY_ALIAS`,
+  `KEY_PASSWORD`) and publishes the release that the in-app updater reads. The version comes from
+  the tag; local builds are `0.0.0-dev`. The repo is public:
+  https://github.com/maiaxi/iptv-player-googletv. Keep provider details, credentials and LAN
+  addresses out of it.
 - Test devices: the `tv_1080p` emulator (`~/Library/Android/sdk/emulator/emulator -avd tv_1080p`)
   and a Xiaomi TV Box S on the LAN (`adb connect <box-ip>:5555`; ask the user for the IP). With both connected, pick
   one with `ANDROID_SERIAL`.

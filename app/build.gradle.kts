@@ -23,8 +23,10 @@ android {
         applicationId = "com.maiaxi.iptvplayer.tv"
         minSdk = 24
         targetSdk = 36
-        versionCode = 101
-        versionName = "0.1.1"
+        // Releases get their version from the git tag: CI passes -PappVersionName=1.2.3 and
+        // -PappVersionCode=10203. Local builds are 0.0.0-dev, older than any release.
+        versionCode = (findProperty("appVersionCode") as String?)?.toInt() ?: 1
+        versionName = findProperty("appVersionName") as String? ?: "0.0.0-dev"
         resValue("string", "app_name", "IPTV Player")
     }
 
