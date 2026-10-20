@@ -23,7 +23,7 @@ android {
         applicationId = "com.maiaxi.iptvplayer.tv"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
+        versionCode = 100
         versionName = "0.1.0"
         resValue("string", "app_name", "IPTV Player")
     }
