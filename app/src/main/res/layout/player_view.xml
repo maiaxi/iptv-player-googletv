@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  A TextureView draws video into the app's own window. A SurfaceView sits behind the window and
+  relies on a transparent hole above it, which Amlogic boxes on Android 11 (Xiaomi TV Box S) don't
+  get inside Compose: there was sound but no picture. surface_type can only be set from XML.
+-->
+<androidx.media3.ui.PlayerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:show_buffering="always"
+    app:surface_type="texture_view" />

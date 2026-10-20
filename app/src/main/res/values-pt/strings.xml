@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="live_tv">TV ao vivo</string>
+    <string name="movies">Filmes</string>
+    <string name="series">Séries</string>
+    <string name="uncategorized">Sem categoria</string>
+    <string name="channel_n">Canal %1$d</string>
+    <string name="movie_n">Filme %1$d</string>
+    <string name="series_n">Série %1$d</string>
+    <string name="episode">Episódio</string>
+    <string name="m3u_playlist">Lista M3U</string>
+    <string name="loading_library">A carregar a biblioteca…</string>
+    <string name="welcome">Bem-vindo ao IPTV Player</string>
+
+    <string name="favorites">Favoritos</string>
+    <string name="recents">Recentes</string>
+    <string name="sources">Fontes</string>
+    <string name="all">Todos</string>
+    <string name="loading">A carregar…</string>
+    <string name="couldnt_load">Não foi possível carregar</string>
+    <string name="try_again">Tentar novamente</string>
+    <string name="no_favorites">Sem favoritos</string>
+    <string name="no_favorites_hint">Mantém OK premido num canal ou filme para o adicionares aos favoritos.</string>
+    <string name="nothing_watched">Nada visto recentemente</string>
+    <string name="nothing_watched_hint">O que vires aparece aqui.</string>
+    <string name="no_content">Sem conteúdo</string>
+    <string name="welcome_message">Adiciona uma lista M3U ou uma conta Xtream Codes para começares a ver TV, filmes e séries.</string>
+
+    <string name="add_source">Adicionar fonte</string>
+    <string name="edit_source">Editar fonte</string>
+    <string name="refresh_library">Atualizar biblioteca</string>
+    <string name="expires">Expira a %1$s</string>
+    <string name="hold_to_edit">Mantém OK premido numa fonte para a editares.</string>
+    <string name="stored_on_tv">Os dados ficam guardados apenas nesta TV.</string>
+    <string name="name">Nome</string>
+    <string name="my_tv">A minha TV</string>
+    <string name="playlist">Lista</string>
+    <string name="server">Servidor</string>
+    <string name="username">Utilizador</string>
+    <string name="password">Password</string>
+    <string name="address">Endereço</string>
+    <string name="details_from_provider">Os dados fornecidos pelo teu fornecedor de IPTV.</string>
+    <string name="xtream_conversion_hint">Se a lista vier de um servidor Xtream (get.php?username=…), é convertida automaticamente para ter filmes, séries e guia de programação.</string>
+    <string name="checking">A verificar…</string>
+    <string name="cancel">Cancelar</string>
+    <string name="add">Adicionar</string>
+    <string name="save">Guardar</string>
+    <string name="remove">Remover</string>
+    <string name="remove_confirm">Remover “%1$s”?</string>
+
+    <string name="playback_error">Não foi possível reproduzir este conteúdo (%1$s).</string>
+
+    <string name="play">Reproduzir</string>
+    <string name="favorite">Favorito</string>
+    <string name="in_favorites">Nos favoritos</string>
+    <string name="episodes">Episódios</string>
+    <string name="season_n">Temporada %1$d</string>
+    <string name="no_episodes">Esta série ainda não tem episódios disponíveis.</string>
+    <string name="couldnt_load_series">Não foi possível carregar a série</string>
+    <string name="episode_title">T%1$d:E%2$d · %3$s</string>
+
+    <string name="no_information">Sem informação</string>
+    <string name="up_next">A seguir: %1$s</string>
+
+    <string name="search">Pesquisar</string>
+    <string name="no_results">Sem resultados para “%1$s”</string>
+    <string name="remote_title">Usar o telemóvel</string>
+    <string name="remote_hint">Lê o código com um telemóvel ligado à mesma rede Wi-Fi, ou abre este endereço:</string>
+    <string name="remote_received">Dados recebidos do telemóvel. Confirma-os e guarda.</string>
+    <string name="remote_page_title">Adicionar uma fonte à TV</string>
+    <string name="remote_send">Enviar para a TV</string>
+    <string name="remote_sent">Enviado. Confirma os dados na TV.</string>
+
+    <string name="audio_and_subtitles">Áudio e legendas</string>
+    <string name="audio">Áudio</string>
+    <string name="subtitles">Legendas</string>
+    <string name="off">Desligadas</string>
+    <string name="track_n">Faixa %1$d</string>
+
+    <string name="error_network">Não foi possível ligar ao servidor. Confirma o endereço e a ligação.</string>
+    <string name="version_n">Versão %1$s</string>
+    <string name="check_for_updates">Procurar atualizações</string>
+    <string name="update_to">Atualizar para a %1$s</string>
+    <string name="update_downloading">A descarregar a atualização…</string>
+    <string name="update_up_to_date">Tens a versão mais recente.</string>
+    <string name="update_download_failed">Não foi possível descarregar a atualização.</string>
+    <string name="update_allow_unknown">Para instalar atualizações, autoriza o IPTV Player a instalar apps desconhecidas nas definições da TV.</string>
+
+    <string name="error_server_address">O endereço do servidor não é válido.</string>
+    <string name="error_playlist_address">O endereço da lista não é válido.</string>
+    <string name="error_playlist_download">Não foi possível descarregar a lista (erro %1$d).</string>
+    <string name="error_not_m3u">O ficheiro não parece ser uma lista M3U.</string>
+    <string name="error_invalid_response">Resposta inválida do servidor.</string>
+    <string name="error_credentials">Utilizador ou password incorretos.</string>
+    <string name="error_series">Não foi possível carregar a série.</string>
+    <string name="error_invalid_server">Endereço do servidor inválido.</string>
+    <string name="error_server_busy">O servidor está ocupado (erro %1$d). Tenta novamente daqui a pouco.</string>
+    <string name="error_server_status">O servidor respondeu com o erro %1$d.</string>
+    <string name="error_invalid_data">O servidor não devolveu dados válidos. Confirma o endereço.</string>
+</resources>

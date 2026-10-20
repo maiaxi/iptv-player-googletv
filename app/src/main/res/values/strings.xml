@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="live_tv">Live TV</string>
+    <string name="movies">Movies</string>
+    <string name="series">Series</string>
+    <string name="uncategorized">Uncategorized</string>
+    <string name="channel_n">Channel %1$d</string>
+    <string name="movie_n">Movie %1$d</string>
+    <string name="series_n">Series %1$d</string>
+    <string name="episode">Episode</string>
+    <string name="m3u_playlist">M3U Playlist</string>
+    <string name="loading_library">Loading library…</string>
+    <string name="welcome">Welcome to IPTV Player</string>
+
+    <string name="favorites">Favorites</string>
+    <string name="recents">Recents</string>
+    <string name="sources">Sources</string>
+    <string name="all">All</string>
+    <string name="loading">Loading…</string>
+    <string name="couldnt_load">Couldn’t load</string>
+    <string name="try_again">Try Again</string>
+    <string name="no_favorites">No Favorites</string>
+    <string name="no_favorites_hint">Hold OK on a channel or movie to add it to your favorites.</string>
+    <string name="nothing_watched">Nothing Watched Yet</string>
+    <string name="nothing_watched_hint">What you watch shows up here.</string>
+    <string name="no_content">No Content</string>
+    <string name="welcome_message">Add an M3U playlist or an Xtream Codes account to start watching TV, movies and series.</string>
+
+    <string name="add_source">Add Source</string>
+    <string name="edit_source">Edit Source</string>
+    <string name="refresh_library">Refresh Library</string>
+    <string name="expires">Expires %1$s</string>
+    <string name="hold_to_edit">Hold OK on a source to edit it.</string>
+    <string name="stored_on_tv">Your details are only stored on this TV.</string>
+    <string name="xtream_codes" translatable="false">Xtream Codes</string>
+    <string name="name">Name</string>
+    <string name="my_tv">My TV</string>
+    <string name="playlist">Playlist</string>
+    <string name="server">Server</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="address">Address</string>
+    <string name="details_from_provider">The details from your IPTV provider.</string>
+    <string name="xtream_conversion_hint">If the playlist comes from an Xtream server (get.php?username=…), it’s converted automatically to get movies, series and the programme guide.</string>
+    <string name="checking">Checking…</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="remove">Remove</string>
+    <string name="remove_confirm">Remove “%1$s”?</string>
+
+    <string name="playback_error">This content couldn’t be played (%1$s).</string>
+
+    <string name="play">Play</string>
+    <string name="favorite">Favorite</string>
+    <string name="in_favorites">In Favorites</string>
+    <string name="episodes">Episodes</string>
+    <string name="season_n">Season %1$d</string>
+    <string name="no_episodes">This series has no episodes available yet.</string>
+    <string name="couldnt_load_series">Couldn’t Load the Series</string>
+    <string name="episode_title">S%1$d:E%2$d · %3$s</string>
+
+    <string name="no_information">No information</string>
+    <string name="up_next">Up next: %1$s</string>
+
+    <string name="search">Search</string>
+    <string name="no_results">No Results for “%1$s”</string>
+    <string name="remote_title">Use your phone</string>
+    <string name="remote_hint">Scan the code with a phone on the same Wi-Fi network, or open this address:</string>
+    <string name="remote_received">Details received from your phone. Check them, then save.</string>
+    <string name="remote_page_title">Add a source to your TV</string>
+    <string name="remote_send">Send to TV</string>
+    <string name="remote_sent">Sent. Check the details on your TV.</string>
+
+    <string name="audio_and_subtitles">Audio and subtitles</string>
+    <string name="audio">Audio</string>
+    <string name="subtitles">Subtitles</string>
+    <string name="off">Off</string>
+    <string name="track_n">Track %1$d</string>
+
+    <string name="error_network">Couldn’t connect to the server. Check the address and your connection.</string>
+    <string name="version_n">Version %1$s</string>
+    <string name="check_for_updates">Check for Updates</string>
+    <string name="update_to">Update to %1$s</string>
+    <string name="update_downloading">Downloading update…</string>
+    <string name="update_up_to_date">You have the latest version.</string>
+    <string name="update_download_failed">Couldn’t download the update.</string>
+    <string name="update_allow_unknown">To install updates, allow IPTV Player to install unknown apps in the TV’s settings.</string>
+
+    <string name="error_server_address">The server address isn’t valid.</string>
+    <string name="error_playlist_address">The playlist address isn’t valid.</string>
+    <string name="error_playlist_download">Couldn’t download the playlist (error %1$d).</string>
+    <string name="error_not_m3u">This file doesn’t look like an M3U playlist.</string>
+    <string name="error_invalid_response">Invalid response from the server.</string>
+    <string name="error_credentials">Incorrect username or password.</string>
+    <string name="error_series">Couldn’t load the series.</string>
+    <string name="error_invalid_server">Invalid server address.</string>
+    <string name="error_server_busy">The server is busy (error %1$d). Try again in a moment.</string>
+    <string name="error_server_status">The server responded with error %1$d.</string>
+    <string name="error_invalid_data">The server didn’t return valid data. Check the address.</string>
+</resources>
