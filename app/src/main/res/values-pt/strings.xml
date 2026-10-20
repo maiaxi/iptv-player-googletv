@@ -84,7 +84,7 @@
     <string name="update_downloading">A descarregar a atualização…</string>
     <string name="update_up_to_date">Tens a versão mais recente.</string>
     <string name="update_download_failed">Não foi possível descarregar a atualização.</string>
-    <string name="update_allow_unknown">Para instalar atualizações, autoriza o IPTV Player a instalar apps desconhecidas nas definições da TV.</string>
+    <string name="update_allow_unknown">Para instalar atualizações, autoriza o IPTV Player a instalar apps desconhecidas nas definições da TV (Apps → Segurança, ou Acesso especial de apps). Ou instala a versão nova a partir do GitHub.</string>
 
     <string name="error_server_address">O endereço do servidor não é válido.</string>
     <string name="error_playlist_address">O endereço da lista não é válido.</string>

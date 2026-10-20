@@ -39,6 +39,7 @@ class Updater(app: Application) : AndroidViewModel(app) {
         private set
 
     val currentVersion: String = BuildConfig.VERSION_NAME
+    private var sentToSettings = false
 
     init {
         // Debug builds have their own id and version suffix, so they never update from releases.
@@ -70,6 +71,13 @@ class Updater(app: Application) : AndroidViewModel(app) {
         val app: Application = getApplication()
         // Android 8+ asks once per app before it may install others.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && !app.packageManager.canRequestPackageInstalls()) {
+            // Some boxes with several profiles (Xiaomi TV Box S) apply that screen's switch to
+            // another profile, so explain instead of sending the user back to it in a loop.
+            if (sentToSettings) {
+                state = State.Failed(app.getString(R.string.update_allow_unknown))
+                return
+            }
+            sentToSettings = true
             val settings = Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, Uri.parse("package:${app.packageName}"))
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             try {

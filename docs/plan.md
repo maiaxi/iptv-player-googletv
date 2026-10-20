@@ -36,7 +36,7 @@ together. Newer releases exist. Upgrade them in a step of their own, after the a
 | 5 | Programme guide (EPG) | ☑ |
 | 6 | Search and adding sources from a phone | ☑ |
 | 7 | Playback hardening | ◐ |
-| 8 | Release builds | ◐ |
+| 8 | Release builds | ☑ |
 
 ## Steps
 
@@ -351,9 +351,30 @@ Notes:
 - Bug found and fixed on the box: the track panel hid the only audio track (`Português ·
   MPEG-L2`). The box declares it as exceeding its capabilities, but ExoPlayer plays it anyway.
   The panel now uses `isTrackSupported(i, allowExceedsCapabilities = true)`.
-- Still open: a GitHub repo, releases, and an in-app updater like the Swift app's
-  `Updater.swift` (check GitHub releases, download the APK, open the system installer). This is
-  waiting for the user's decision.
+- GitHub: the public repo is https://github.com/maiaxi/iptv-player-googletv, named so it's easy
+  to find next to `maiaxi/iptv-player`. The local folder is still `iptv-player-tv`. Commits use
+  the noreply identity of the Swift repo, configured for this repo only. The README is for people
+  installing the app. Provider details and LAN IPs were removed from the docs before publishing.
+- Releases: `scripts/release.sh <x.y.z> [notes]` refuses to run with uncommitted changes or a
+  missing `keystore.properties`. It sets `versionName` and `versionCode` (x·10000 + y·100 + z),
+  runs the tests, builds and verifies the signed APK, commits "Release x.y.z", tags `vx.y.z`,
+  pushes, and runs `gh release create` with `iptv-player-googletv-x.y.z.apk`. It runs on the Mac,
+  not in CI, so the signing key never leaves it.
+- Updater: `services/Updater.kt`, an `AndroidViewModel` created in `AppRoot`. Release builds check
+  `releases/latest` of the repo once at launch; debug builds never do. A newer tag shows
+  "Update to x" in the browse header and under Sources, next to the version and "Check for
+  Updates". Updating downloads the release APK into `cacheDir/updates` and opens the system
+  installer through a `FileProvider` (`res/xml/update_paths.xml`). It needs
+  `REQUEST_INSTALL_PACKAGES`; without it, the app first opens the "install unknown apps"
+  settings. `UpdaterTest` covers the version comparison.
+- Tested on the box: a local 0.0.9 build found v0.1.0 on GitHub, downloaded it, and the
+  system installer updated it to 0.1.0 with the source kept.
+- Xiaomi TV Box S quirk: it has a second profile (user 10). The settings screen the app opens
+  applied the switch to the app in that profile, so `canRequestPackageInstalls()` stayed false
+  and the app sent the user back to the same screen. It was granted for user 0 with
+  `adb shell appops set --user 0 com.maiaxi.iptvplayer.tv REQUEST_INSTALL_PACKAGES allow`. The
+  app now explains where to allow it on the second try instead of looping. The TV's own path
+  (Settings → Apps → Security or Special app access) wasn't tried.
 
 ## Log
 
@@ -398,3 +419,6 @@ Notes:
   resource shrinking, versioned APK names, and a separate debug id. Release checked on the Xiaomi
   box: 0.7–0.9 s cold start. Fixed the track panel hiding audio tracks that exceed capabilities.
   GitHub and the updater wait on the user.
+- 2026-10-20 · Step 8 · Public repo `maiaxi/iptv-player-googletv`, `scripts/release.sh`, and
+  release v0.1.0. In-app updater from GitHub releases, tested on the box from 0.0.9 to 0.1.0.
+  Found the Xiaomi profile quirk with the install permission and added a fallback message.
